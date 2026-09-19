@@ -1,0 +1,58 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "1. Generate raw tickets",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ingestion/generate_raw_tickets.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "2. LLM enrich",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/enrichment/llm_enrich.py",
+            "cwd": "${workspaceFolder}/enrichment",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "3. Validate all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/validation/validate_all.py",
+            "cwd": "${workspaceFolder}/validation",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "4. Load to DuckDB",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ingestion/load_to_duckdb.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "5. Run full pipeline (Prefect)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/orchestration/pipeline_flow.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "6. Run pytest (all tests)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests/", "-v"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "7. Launch Streamlit dashboard",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": ["run", "dashboard/app.py"],
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: fct_tickets
+    columns:
+      - name: ticket_id
+        data_tests:
+          - unique
+          - not_null
+      - name: sentiment_score
+        data_tests:
+          - not_null
+  - name: mart_daily_ticket_trends
+    columns:
+      - name: created_date
+        data_tests:
+          - unique
+          - not_null
+  - name: mart_category_breakdown
+    columns:
+      - name: category
+        data_tests:
+          - unique
+          - not_null
+  - name: mart_plan_health
+    columns:
+      - name: plan
+        data_tests:
+          - unique
+          - not_null

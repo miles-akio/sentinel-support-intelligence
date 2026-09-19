@@ -1,0 +1,13 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.git/
+data/raw/*.csv
+data/processed/*.parquet
+warehouse.duckdb
+dbt_project/target/
+dbt_project/logs/
+dbt_project/.user.yml

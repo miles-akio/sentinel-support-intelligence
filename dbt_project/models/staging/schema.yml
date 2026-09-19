@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_tickets
+    columns:
+      - name: ticket_id
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        data_tests:
+          - not_null
+  - name: stg_ticket_enrichment
+    columns:
+      - name: ticket_id
+        data_tests:
+          - unique
+          - not_null
+      - name: category
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['billing', 'bug', 'account_access', 'feature_request', 'shipping', 'other']
+      - name: urgency
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['low', 'medium', 'high']
