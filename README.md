@@ -1,4 +1,4 @@
-# AI-Powered Support Ticket Intelligence — LLM + Data Analytics Project (2026)
+# Sentinel Support Intelligence: AI-Powered Support Ticket Intelligence — LLM + Data Analytics Project (2026)
 
 A complete, runnable project that combines a production-style data pipeline
 with an LLM layer: Claude classifies, scores, and summarizes raw customer
